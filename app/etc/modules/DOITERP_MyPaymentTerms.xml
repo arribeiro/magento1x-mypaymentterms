@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<DOITERP_MyPaymentTerms>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+                     <Mage_Payment />
+            </depends>
+		</DOITERP_MyPaymentTerms>
+	</modules>
+</config>
+
+

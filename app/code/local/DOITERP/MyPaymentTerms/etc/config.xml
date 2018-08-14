@@ -1,0 +1,62 @@
+  <?xml version="1.0"?>
+    <config>
+        <modules>
+           <DOITERP_MyPaymentTerms>
+              <version>0.1.0</version>
+           </DOITERP_MyPaymentTerms>
+        </modules>
+     
+        <global>
+        <blocks>
+            <mypaymentterms>
+                <class>DOITERP_MyPaymentTerms_Block</class>
+            </mypaymentterms>
+        </blocks>
+            <models>
+                <mypaymentterms>
+                    <class>DOITERP_MyPaymentTerms_Model</class>
+                </mypaymentterms>
+            </models>
+
+            <resources>
+                <mypaymentterms_setup>
+                    <setup>
+                        <module>DOITERP_MyPaymentTerms</module>
+                    </setup>
+                    <connection>
+                        <use>core_setup</use>
+                    </connection>
+                </mypaymentterms_setup>
+                <mypaymentterms_write>
+                    <connection>
+                      <use>core_write</use>
+                    </connection>
+                </mypaymentterms_write>
+                <mypaymentterms_read>
+                   <connection>
+                    <use>core_read</use>
+                  </connection>
+                </mypaymentterms_read>
+            </resources>
+        </global>
+     
+        <default>
+            <payment>
+                <mypaymentterms>
+                    <active>0</active>
+                    <model>newmodule/paymentMethod</model>
+                    <order_status>1</order_status>
+                    <login backend_model="adminhtml/system_config_backend_encrypted"/>
+                    <order_status>pending</order_status>
+                    <title>Credit Card (Authorize.net)</title>
+                    <cctypes>AE,VI,MC,DI</cctypes>
+                    <payment_action>authorize</payment_action>
+                    <cgi_url>https://secure.authorize.net/gateway/transact.dll</cgi_url>
+                    <debug>0</debug>
+                    <email_customer>0</email_customer>
+                    <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+                    <allowspecific>0</allowspecific>
+                </mypaymentterms>
+             </payment>
+        </default>
+    </config>
